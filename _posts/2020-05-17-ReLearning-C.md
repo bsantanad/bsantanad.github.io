@@ -1,7 +1,9 @@
 ---
 layout: post
 title: Basics in C (Refresher).
-date: 2020-05-17
+date: 2020-05-17 14:00:00 -0600
+categories: [C]
+tags: [c, syntax]
 
 ---
 

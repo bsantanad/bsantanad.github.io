@@ -1,7 +1,10 @@
 ---
 layout: post
 title: Arrays and Strings in C.
-date: 2020-05-18 19:28:00
+date: 2020-05-18 19:28:00 -0600
+categories: [C, arrays]
+tags: [c, syntax, array]
+
 
 ---
 

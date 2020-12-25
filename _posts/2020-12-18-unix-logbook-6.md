@@ -2,7 +2,8 @@
 layout: post
 title: FreeBSD-Unix Logbook 6, Mounting File Systems 
 date: 2020-12-18 16:00:00
-
+categories: [Unix, mount]
+tags: [bsd, unix, file systems, mount, umount] 
 ---
 ## _fstab_ File
 

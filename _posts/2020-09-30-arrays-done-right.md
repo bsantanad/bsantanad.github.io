@@ -2,7 +2,8 @@
 layout: post
 title: C Done Right; Arrays
 date: 2020-09-30 18:41:00
-
+categories: [C, arrays]
+tags: [c, syntax, array, well-done]
 ---
 
 ## Personal Stuff

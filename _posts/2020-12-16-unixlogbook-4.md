@@ -2,7 +2,8 @@
 layout: post
 title: FreeBSD-Unix Logbook 4, Directory Structure 
 date: 2020-12-16 16:10:00
-
+categories: [Unix, directory]
+tags: [bsd, unix, dir, structure] 
 ---
 
 # Directory Structure 

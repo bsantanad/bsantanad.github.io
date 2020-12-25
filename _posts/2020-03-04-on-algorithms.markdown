@@ -1,7 +1,8 @@
 ---
 layout: post
 title: On Algorithms
-date: 2020-03-04
+categories: [Algorithms]
+date: 2020-03-04 00:00:00 -0600
 ---
 
 As I said in my past blog, I'm currently reading the book [**Algorithms for Dummies**][book-link]. I'm just at page 40 and I wanted to share what I have learned.

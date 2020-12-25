@@ -10,5 +10,7 @@ order: 4
 # MIT License
 ---
 
+I'm a Unix enthusiast, studying computer science in Mexico. In this blog I post 
+all my extracurriucular learnings. Mainly it's for my own consultant in the 
+future, but if someone find something useful here feel free to share it.
 
-> **Note**: Add Markdown syntax content to file `_tabs/about.md` and it will show up on this page.

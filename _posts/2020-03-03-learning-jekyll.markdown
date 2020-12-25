@@ -1,7 +1,8 @@
 ---
 layout: post
 title: What I've learned so far
-date: 2020-03-03
+tags: [jekyll, markdown]
+date: 2020-03-03 00:00:00 -0600
 ---
 
 I'll start saying my starting point, so hopefully, in a few years I can go back to this post and say, wow, I didn't know a thing. Not just about programming but about life in general. As I've stated in [First Post][first-post] I hope to write here weekly, and if I can every third day.

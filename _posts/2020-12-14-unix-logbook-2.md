@@ -2,7 +2,8 @@
 layout: post
 title: FreeBSD-Unix Logbook 2, Users and Account Management 
 date: 2020-12-14 17:18:00
-
+categories: [Unix, users]
+tags: [bsd, unix, users, account]
 ---
 
 ## Disclaimer

@@ -1,8 +1,9 @@
 ---
 layout: post
 title: Pointer Basics and Structures in C.
-date: 2020-05-18 10:20:00
-
+date: 2020-05-18 10:20:00 -0600
+categories: [C, pointers]
+tags: [c, syntax, pointers, struct]
 ---
 
 ## Heavier Things

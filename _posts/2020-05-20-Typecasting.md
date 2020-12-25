@@ -1,8 +1,9 @@
 ---
 layout: post
 title: Typecasting in C
-date: 2020-05-20 10:28:00
-
+date: 2020-05-20 10:28:00 -0600
+categories: [C,typecast]
+tags: [c, syntax, typecast]
 ---
 
 ## Welcome back!

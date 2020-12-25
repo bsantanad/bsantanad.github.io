@@ -2,7 +2,9 @@
 
 layout: post
 title: Vectors and Matrices on Numpy
-date: 2020-03-16 
+date: 2020-03-16 14:00:00 -0600
+categories: [Algorithms, Python]
+tags: [python, numpy, matrix, array]
 
 ---
 

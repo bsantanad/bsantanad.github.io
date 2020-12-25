@@ -1,8 +1,9 @@
 ---
 layout: post
 title: Linux apt commands.
-date: 2020-03-12
-
+date: 2020-03-12 12:00:00 -0600
+categories: [linux, apt]
+tags: [debian, apt, ubuntu]
 ---
 
 So, it's been almost a week since my last post. To be honest I hadn't read the book, so I didn't have anything to post. Nevertheless, today I did, and also y learn a little more about Linux.

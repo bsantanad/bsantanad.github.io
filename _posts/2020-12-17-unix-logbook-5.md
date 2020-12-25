@@ -2,7 +2,8 @@
 layout: post
 title: FreeBSD-Unix Logbook 5, Disk Organization 
 date: 2020-12-17 18:20:00
-
+categories: [Unix, disk]
+tags: [bsd, unix, disk] 
 ---
 ## Files and Dir
 

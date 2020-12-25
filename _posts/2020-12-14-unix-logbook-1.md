@@ -2,7 +2,8 @@
 layout: post
 title: FreeBSD-Unix Logbook 1, Setting things up with Raspberry Pi
 date: 2020-12-14 13:23:00
-
+categories: [Unix]
+tags: [bsd, unix, raspberry pi]
 ---
 
 ## Little Back Story
