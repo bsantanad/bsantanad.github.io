@@ -1,0 +1,263 @@
+<!DOCTYPE html><html lang="en" mode="dark" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="theme" content="Chirpy v2.7.1"><meta name="generator" content="Jekyll v4.1.1" /><meta property="og:title" content="Arrays and Strings in C." /><meta name="author" content="Benjamin Santana" /><meta property="og:locale" content="en_US" /><meta name="description" content="More Content!" /><meta property="og:description" content="More Content!" /><link rel="canonical" href="/posts/Arrays-Strings/" /><meta property="og:url" content="/posts/Arrays-Strings/" /><meta property="og:site_name" content="bsantanad" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2020-05-18T20:28:00-05:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="Arrays and Strings in C." /><meta name="twitter:site" content="@twitter_username" /><meta name="twitter:creator" content="@Benjamin Santana" /><meta name="google-site-verification" content="google_meta_tag_verification" /> <script type="application/ld+json"> {"description":"More Content!","url":"/posts/Arrays-Strings/","headline":"Arrays and Strings in C.","dateModified":"2020-12-25T14:28:24-06:00","@type":"BlogPosting","datePublished":"2020-05-18T20:28:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/Arrays-Strings/"},"author":{"@type":"Person","name":"Benjamin Santana"},"@context":"https://schema.org"}</script><title>Arrays and Strings in C. | bsantanad</title><link rel="shortcut icon" href="/assets/img/favicons/favicon.ico" type="image/x-icon"><link rel="icon" href="/assets/img/favicons/favicon.ico" type="image/x-icon"><link rel="apple-touch-icon" href="/assets/img/favicons/apple-icon.png"><link rel="apple-touch-icon" href="/assets/img/favicons/apple-icon-precomposed.png"><link rel="apple-touch-icon" sizes="57x57" href="/assets/img/favicons/apple-icon-57x57.png"><link rel="apple-touch-icon" sizes="60x60" href="/assets/img/favicons/apple-icon-60x60.png"><link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicons/apple-icon-72x72.png"><link rel="apple-touch-icon" sizes="76x76" href="/assets/img/favicons/apple-icon-76x76.png"><link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicons/apple-icon-114x114.png"><link rel="apple-touch-icon" sizes="120x120" href="/assets/img/favicons/apple-icon-120x120.png"><link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicons/apple-icon-144x144.png"><link rel="apple-touch-icon" sizes="152x152" href="/assets/img/favicons/apple-icon-152x152.png"><link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-icon-180x180.png"><link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicons/android-icon-192x192.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicons/favicon-96x96.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/assets/img/favicons/manifest.json"><meta name='msapplication-config' content='/assets/img/favicons/browserconfig.xml'><meta name="msapplication-TileColor" content="#ffffff"><meta name="msapplication-TileImage" content="/assets/img/favicons/ms-icon-144x144.png"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://fonts.gstatic.com"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin="use-credentials"><link rel="dns-prefetch" href="https://www.google-analytics.com"><link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="preconnect" href="cdn.jsdelivr.net"><link rel="dns-prefetch" href="cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha256-LA89z+k9fjgMKQ/kq4OO2Mrf8VltYml/VES+Rg0fh20=" crossorigin="anonymous"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous"><link rel="preload" href="/assets/css/post.css" as="style"><link rel="stylesheet" href="/assets/css/post.css"><link rel="preload" as="style" href="/assets/css/lib/bootstrap-toc.min.css"><link rel="stylesheet" href="/assets/css/lib/bootstrap-toc.min.css" /> <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script> <script defer src="https://cdn.jsdelivr.net/combine/npm/popper.js@1.15.0,npm/bootstrap@4/dist/js/bootstrap.min.js"></script> <script async src="/assets/js/post.min.js"></script> <script defer src="/app.js"></script> <script defer src="https://www.googletagmanager.com/gtag/js?id="></script> <script> document.addEventListener("DOMContentLoaded", function(event) { window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', ''); }); </script><body data-spy="scroll" data-target="#toc"><div id="sidebar" class="d-flex flex-column align-items-end"><div class="profile-wrapper text-center"><div id="avatar"> <a href="/" alt="avatar" class="mx-auto"> <img src="/assets/img/sample/avatar.jpg" alt="avatar" onerror="this.style.display='none'"> </a></div><div class="site-title mt-3"> <a href="/">bsantanad</a></div><div class="site-subtitle font-italic">benja santana's blog.</div></div><ul class="w-100"><li class="nav-item"> <a href="/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>HOME</span> </a><li class="nav-item"> <a href="/tabs/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>CATEGORIES</span> </a><li class="nav-item"> <a href="/tabs/tags/" class="nav-link"> <i class="fa-fw fas fa-tags ml-xl-3 mr-xl-3 unloaded"></i> <span>TAGS</span> </a><li class="nav-item"> <a href="/tabs/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>ARCHIVES</span> </a><li class="nav-item"> <a href="/tabs/about/" class="nav-link"> <i class="fa-fw fas fa-info ml-xl-3 mr-xl-3 unloaded"></i> <span>ABOUT</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center"> <a href="https://github.com/bsantanad" aria-label="github" target="_blank" rel="noopener"> <i class="fab fa-github-alt"></i> </a> <a href=" javascript:location.href = 'mailto:' + ['0211518','up.edu.mx'].join('@')" aria-label="email" > <i class="fas fa-envelope"></i> </a> <a href="" aria-label="linkedin" target="_blank" rel="noopener"> <i class="fab fa-linkedin"></i> </a></div></div><div id="topbar-wrapper" class="row justify-content-center topbar-down"><div id="topbar" class="col-11 d-flex h-100 align-items-center justify-content-between"> <span id="breadcrumb"> <span> <a href="/"> Posts </a> </span> <span>Arrays and Strings in C.</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> Post</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" placeholder="Search..."> <i class="fa fa-times-circle fa-fw" id="search-cleaner"></i> </span> <span id="search-cancel" >Cancel</span></div></div><div id="main-wrapper"><div id="main"><div class="row"><div id="post-wrapper" class="col-12 col-lg-11 col-xl-8"><div class="post pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><h1 data-toc-skip>Arrays and Strings in C.</h1><div class="post-meta text-muted d-flex flex-column"><div> <span class="timeago " data-toggle="tooltip" data-placement="bottom" title="Mon, May 18, 2020, 8:28 PM -0500" > May 18, 2020 <i class="unloaded">2020-05-18T20:28:00-05:00</i> </span> by <span class="author"> Benjamin Santana </span></div><div> <span> Updated <span class="timeago lastmod" data-toggle="tooltip" data-placement="bottom" title="Fri, Dec 25, 2020, 2:28 PM -0600" > Dec 25, 2020 <i class="unloaded">2020-12-25T14:28:24-06:00</i> </span> </span> <span class="readtime" data-toggle="tooltip" data-placement="bottom" title="1184 words">6 min</span></div></div><div class="post-content"><h2 id="more-content">More Content!</h2><p>Hi! Glad to see you here. If you just came from the last post where we learn about <a href="https://benjasantana.github.io/2020/05/18/Pointers-Structures-C.html">Pointers and Structs</a> welcome back! And if this is the first post you see, you can go and check out the other “mini refreshers” I’ve written. Today we will get two know Arrays and Strings, and how they are managed in C.</p><p>We are taking most of this course information from <a href="https://www.cprogramming.com/tutorial/c/lesson1.html">here</a>. So if you want better information, go there!</p><h2 id="arrays">Arrays</h2><p>Let’s start with the array, I want you to imagine you’ve got a drawer cabinet with <em>n</em> drawers, you could store a thing inside each drawer. And if you wanted someone else to give you a thing in a specific drawer you would have to tell him in which drawer to check. Okay an array it’s pretty much the same, you have this spaces where you can store data. Look it my sound confusing at first but let’s put an example.</p><div class="language-c highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre><td class="rouge-code"><pre><span class="cp">#include &lt;stdio.h&gt;
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+
+    <span class="kt">char</span> <span class="n">name</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="n">scanf</span><span class="p">(</span><span class="s">"%s"</span><span class="p">,</span> <span class="n">name</span><span class="p">);</span>
+
+    <span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">name</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sc">'e'</span><span class="p">){</span>
+
+            <span class="n">printf</span><span class="p">(</span><span class="s">"your name has an e"</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>Okay, so what’s happening there? We are declaring an array of chars AKA string, named <em>name</em>, this means that we can have strings of characters like “david” or “michael”. Then we can access each element of the array with <em>[]</em>. For example, if the name given is “peter”, we could access each letter in the name by its index, for example:</p><ul><li>name[0] would be ‘p’<li>name[3] would be ‘e’</ul><p>Note that the index starts with 0, in this case, the higher index of name would be name[9], <strong>name[10] wouldn’t exist</strong> because that chunk of memory doesn’t belong to this array so the OS won’t let you access that position.</p><p>So in the program we read the name of the person and then, check if there’s an ‘e’ in any of its position and print’s it.</p><p><strong>Note</strong> in this program we could have names bigger than 10 characters.</p><h3 id="quick-note-on-pointers">Quick Note on Pointers</h3><p>It’s good to point out that if we are storing an array into a pointer we don’t have to use the ‘&amp;’:</p><div class="language-c highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre><td class="rouge-code"><pre><span class="cp">#include &lt;stdio.h&gt;
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+
+    <span class="kt">char</span> <span class="n">name</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+    <span class="kt">char</span> <span class="o">*</span><span class="n">namePointer</span><span class="p">;</span>
+
+    <span class="n">namePointer</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
+
+    <span class="n">scanf</span><span class="p">(</span><span class="s">"%s"</span><span class="p">,</span> <span class="n">name</span><span class="p">);</span>
+
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></table></code></div></div><h3 id="bidimensional-arrays">Bidimensional Arrays</h3><p>You could have an array in the form of a matrix, imagine a drawer cabinet with more than one row of drawers.</p><div class="language-c highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre><td class="rouge-code"><pre><span class="cp">#include &lt;stdio.h&gt;
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+
+    <span class="kt">int</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">];</span>
+
+    <span class="n">numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="n">numbers</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+
+    <span class="n">numbers</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">];</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]);</span>
+
+<span class="p">}</span>
+</pre></table></code></div></div><p>The output would be <em>8</em>, so you can bidimensional arrays.</p><h3 id="another-way-to-set-the-size">Another way to set the Size</h3><p>When declaring a string we could also set the size and the content of the string like this.</p><div class="language-c highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre><td class="rouge-code"><pre><span class="cp">#include &lt;stdio.h&gt;
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+
+    <span class="kt">char</span> <span class="n">book</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"Great Gatsby"</span><span class="p">;</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%s"</span><span class="p">,</span> <span class="n">book</span><span class="p">);</span>
+
+<span class="p">}</span>
+</pre></table></code></div></div><p>There’s a lot of other stuff you can do with an array, we are just here covering the basics, maybe later in we could do a set of post for a more advanced C.</p><h2 id="string">String</h2><p>So look, strings are arrays of chars, but C adds them a char at the end to know where the string ends, if you declare</p><ul><li>char hi[] = “hello”;</ul><p>The length of hi wouldn’t be 4, it would be 5! Because we need to account for that last element which tells us that the arrays has ended.</p><p>It’s not a good idea to read strings with <em>scanf</em>, you could do it, but it’s not recommended because it could leave into problems. We will use another function called <strong>fgets(char <em>string, int size, FILE</em> file)</strong> this function can also read files, but in this case we will give the parameter <em>stdin</em> which stands for standard input, and this will tell it two expect something from the keyboard.</p><p>Here’s and example,</p><div class="language-c highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre><td class="rouge-code"><pre>
+<span class="cp">#include &lt;stdio.h&gt;
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+
+    <span class="kt">char</span> <span class="n">name</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+
+    <span class="n">fgets</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">stdin</span><span class="p">);</span> <span class="c1">// (int *string, int size, stdin);</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%s"</span><span class="p">,</span> <span class="n">name</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+</pre></table></code></div></div><p>This function it’s really great, first you give the direction of the string, and as you might remember, because it’s an array, we don’t need to use the <em>‘&amp;’</em>. Then you set the length of the string you want to read. <strong>NOTE:</strong> that this could be smaller than the string itself.</p><p>Look there’s something important you need to know when using fgets, It will “try” to read all the characters you told him, so if there is space missing and you hit enter, it will store ‘\n’ in your array. And then in the place you told him you will end, it would store the ‘\0’ meaning that the string ends here, this might lead into a problem when using…</p><h3 id="stringh-library">string.h library</h3><p>This library has multiple operations with strings and it’s pretty handy, here’s a brief list,</p><div class="table-wrapper"><table><thead><tr><th>Function<th style="text-align: center">Param<th style="text-align: right">What does it Do<tbody><tr><td>strcmp<td style="text-align: center">int strcmp(const char *string1, const char *string2)<td style="text-align: right">Compares two strings, returns 0 if they’re equal, not 0 if they’re not, CaseSensitive<tr><td>strcat<td style="text-align: center">char *strcat(char *destination, const char *scr)<td style="text-align: right">Returns a concatenated String of the two strings given<tr><td>strcpy<td style="text-align: center">char *strcpy ( char *dest, const char *src )<td style="text-align: right">Copies one string into the other<tr><td>strlen<td style="text-align: center">size_t *strcpy ( const char *string1 )<td style="text-align: right">Returns the value size of a string without the ‘\0’</table></div><p>Here’s a little piece of code implementing some of them,</p><div class="language-c highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+</pre><td class="rouge-code"><pre><span class="cp">#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+</span><span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+
+    <span class="kt">char</span> <span class="n">fruit</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"watermelon"</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">juice</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"apple"</span><span class="p">;</span>
+
+    <span class="kt">char</span> <span class="n">appended</span><span class="p">[</span><span class="mi">50</span><span class="p">];</span>
+
+    <span class="kt">int</span> <span class="n">fruitLen</span> <span class="o">=</span> <span class="n">strlen</span><span class="p">(</span><span class="n">fruit</span><span class="p">);</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">"The word %s has %d letters</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">fruit</span><span class="p">,</span> <span class="n">fruitLen</span><span class="p">);</span>
+
+    <span class="n">strcat</span><span class="p">(</span><span class="n">fruit</span><span class="p">,</span><span class="n">juice</span><span class="p">);</span>
+    <span class="n">fruitLen</span> <span class="o">=</span> <span class="n">strlen</span><span class="p">(</span><span class="n">fruit</span><span class="p">);</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">"The word %s has %d letters</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">fruit</span><span class="p">,</span> <span class="n">fruitLen</span><span class="p">);</span>
+
+    <span class="n">strcpy</span><span class="p">(</span><span class="n">appended</span><span class="p">,</span> <span class="n">fruit</span><span class="p">);</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">appended</span><span class="p">);</span>
+
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>The output is,</p><div class="language-bash highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre>
+The word watermelon has 10 letters
+The word watermelonapple has 15 letters
+watermelonapple
+
+</pre></table></code></div></div><p><strong>NOTE:</strong> I’ve said that giving fgets() a wrong size could lead into problems because some of these functions, rely on that last character ‘\0’ to work, so be careful with that.</p><h3 id="read-array-of-strings">Read Array of Strings</h3><div class="language-c highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+</pre><td class="rouge-code"><pre><span class="cp">#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
+</span>
+
+<span class="cp">#define MAXLENGTH 99
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+
+    <span class="kt">int</span> <span class="n">howManyStrings</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+
+    <span class="c1">//How many Strings you want.</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">howManyStrings</span><span class="p">);</span>
+
+    <span class="kt">char</span> <span class="o">*</span><span class="n">stringList</span><span class="p">[</span><span class="n">howManyStrings</span><span class="p">];</span>
+
+    <span class="c1">//Read the array of Strings</span>
+    <span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">howManyStrings</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+
+        <span class="n">stringList</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="n">MAXLENGTH</span><span class="o">*</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">char</span><span class="p">));</span>
+        <span class="n">scanf</span><span class="p">(</span><span class="s">"%s"</span><span class="p">,</span> <span class="n">stringList</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+
+    <span class="p">}</span>
+
+    <span class="c1">//Free memory</span>
+    <span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">howManyStrings</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="n">free</span><span class="p">(</span><span class="n">stringList</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+        <span class="n">stringList</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>Read how many strings you want, in a loop, first assing the memory then ask for the string.</p><p>Past post <a href="https://benjasantana.github.io/2020/05/18/Pointers-Structures-C.html">Structures and Pointers</a></p><p>Next post <a href="https://benjasantana.github.io/2020/05/19/Files.html">Files I/O</a></p><p>Happy Coding, benjaSantana</p></div><div class="post-tail-wrapper text-muted"><div class="post-meta mb-3"> <i class="far fa-folder-open fa-fw mr-1"></i> <a href='/categories/c/'>C</a>, <a href='/categories/arrays/'>arrays</a></div><div class="post-tags"> <i class="fa fa-tags fa-fw mr-1"></i> <a href="/tags/c/" class="post-tag no-text-decoration" >c</a> <a href="/tags/syntax/" class="post-tag no-text-decoration" >syntax</a> <a href="/tags/array/" class="post-tag no-text-decoration" >array</a></div><div class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2"><div class="license-wrapper"> This post is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> by the author.</div><div class="share-wrapper"> <span class="share-label text-muted mr-1">Share</span> <span class="share-icons"> <a href="https://twitter.com/intent/tweet?text=Arrays and Strings in C. - bsantanad&url=/posts/Arrays-Strings/" data-toggle="tooltip" data-placement="top" title="Twitter" target="_blank" rel="noopener" aria-label="Twitter"> <i class="fa-fw fab fa-twitter"></i> </a> <a href="https://www.facebook.com/sharer/sharer.php?title=Arrays and Strings in C. - bsantanad&u=/posts/Arrays-Strings/" data-toggle="tooltip" data-placement="top" title="Facebook" target="_blank" rel="noopener" aria-label="Facebook"> <i class="fa-fw fab fa-facebook-square"></i> </a> <a href="https://telegram.me/share?text=Arrays and Strings in C. - bsantanad&url=/posts/Arrays-Strings/" data-toggle="tooltip" data-placement="top" title="Telegram" target="_blank" rel="noopener" aria-label="Telegram"> <i class="fa-fw fab fa-telegram"></i> </a> <i class="fa-fw fas fa-link small" onclick="copyLink()" data-toggle="tooltip" data-placement="top" title="Copy link"></i> </span></div></div></div></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted topbar-down"><div class="access"><div id="access-lastmod" class="post"> <span>Recent Update</span><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li><a href="/posts/arrays-done-right/">C Done Right; Arrays</a><li><a href="/posts/unix-logbook-1/">FreeBSD-Unix Logbook 1, Setting things up with Raspberry Pi</a><li><a href="/posts/unix-logbook-2/">FreeBSD-Unix Logbook 2, Users and Account Management</a><li><a href="/posts/unix-logbook-3/">FreeBSD-Unix Logbook 3, Permissions</a><li><a href="/posts/unixlogbook-4/">FreeBSD-Unix Logbook 4, Directory Structure</a></ul></div><div id="access-tags"> <span>Trending Tags</span><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/bsd/">bsd</a> <a class="post-tag" href="/tags/unix/">unix</a> <a class="post-tag" href="/tags/c/">c</a> <a class="post-tag" href="/tags/syntax/">syntax</a> <a class="post-tag" href="/tags/array/">array</a> <a class="post-tag" href="/tags/basics/">basics</a> <a class="post-tag" href="/tags/jekyll/">jekyll</a> <a class="post-tag" href="/tags/python/">python</a> <a class="post-tag" href="/tags/account/">account</a> <a class="post-tag" href="/tags/app/">app</a></div></div></div><div id="toc-wrapper" class="pl-0 pr-4 mb-5"> <span class="pl-3 pt-2 mb-2">Contents</span><nav id="toc" data-toggle="toc"></nav></div></div></div><div class="row"><div class="col-12 col-lg-11 col-xl-8"><div id="post-extend-wrapper" class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><div id="related-posts" class="mt-5 mb-2 mb-sm-4"><h3 class="pt-2 mt-1 mb-4 ml-1" data-toc-skip>Further Reading</h3><div class="card-deck mb-4"><div class="card"> <a href="/posts/arrays-done-right/"><div class="card-body"> <span class="timeago small" > Sep 30, 2020 <i class="unloaded">2020-09-30T13:41:00-05:00</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>C Done Right; Arrays</h3><div class="text-muted small"><p> Personal Stuff Hi, my last post was almost 4 months ago, so I’ll do a quick update of my life – if you are here just for the pointers info scroll down – Well, I’ve been working remotely at Intel a...</p></div></div></a></div><div class="card"> <a href="/posts/ReLearning-C/"><div class="card-body"> <span class="timeago small" > May 17, 2020 <i class="unloaded">2020-05-17T15:00:00-05:00</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>Basics in C (Refresher).</h3><div class="text-muted small"><p> It’s been a while Hi! So I’ve not written a lot in the blog since 2 months ago. Some things changed in my life. I got an Internship in Intel! Last Wednesday I received the offer. Also, we have bee...</p></div></div></a></div><div class="card"> <a href="/posts/Pointers-Structures-C/"><div class="card-body"> <span class="timeago small" > May 18, 2020 <i class="unloaded">2020-05-18T11:20:00-05:00</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>Pointer Basics and Structures in C.</h3><div class="text-muted small"><p> Heavier Things So yesterday we took a look at the basic C stuff: loops, functions, stdio and more! If you want to check that out click here, once you have that covered this is the next step. Good ...</p></div></div></a></div></div></div><div class="post-navigation d-flex justify-content-between"> <a href="/posts/Pointers-Structures-C/" class="btn btn-outline-primary"><p>Pointer Basics and Structures in C.</p></a> <a href="/posts/Files/" class="btn btn-outline-primary"><p>Files in C</p></a></div><div id="disqus" class="pt-2 pb-2"><p class="font-italic text-center text-muted small"> Comments powered by <a href="https://disqus.com/">Disqus</a>.</p></div><script src="/assets/js/lib/jquery.disqusloader.min.js"></script> <script> var options = { scriptUrl: '//bsantanad-github-io.disqus.com/embed.js', disqusConfig: function() { this.page.url = '/posts/Arrays-Strings/'; this.page.identifier = '/posts/Arrays-Strings/'; } }; $.disqusLoader('#disqus', options); </script></div></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script> <script type="text/javascript"> const imgs = document.querySelectorAll('#post-wrapper img'); const observer = lozad(imgs); observer.observe(); </script><footer class="d-flex w-100 justify-content-center"><div class="d-flex justify-content-between align-items-center"><div class="footer-left"><p class="mb-0"> © 2021 <a href="https://github.com/bsantanad">Benjamin Santana</a>. <span data-toggle="tooltip" data-placement="top" title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.">Some rights reserved.</span></p></div><a href="https://freebsdfoundation.org/donate" target="_blank"> <img src="https://freebsdfoundation.org/wp-content/uploads/2015/12/proud_donor.gif" alt="Proud Donor" title="FreeBSD Foundation Donor" width="70" height="70" ></a><div class="footer-right"><p class="mb-0"> Proudly powered by <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> with <a href="https://github.com/cotes2020/jekyll-theme-chirpy/" target="_blank" rel="noopener">Chirpy</a> theme.</p></div></div></footer></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-xl-11 post-content"><div id="search-hints"><h4 class="text-muted mb-4">Trending Tags</h4><a class="post-tag" href="/tags/bsd/">bsd</a> <a class="post-tag" href="/tags/unix/">unix</a> <a class="post-tag" href="/tags/c/">c</a> <a class="post-tag" href="/tags/syntax/">syntax</a> <a class="post-tag" href="/tags/array/">array</a> <a class="post-tag" href="/tags/basics/">basics</a> <a class="post-tag" href="/tags/jekyll/">jekyll</a> <a class="post-tag" href="/tags/python/">python</a> <a class="post-tag" href="/tags/account/">account</a> <a class="post-tag" href="/tags/app/">app</a></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a> <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.7.3/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"><div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>{categories}</div><div><i class="fa fa-tag fa-fw"></i>{tags}</div></div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5">Oops! No result founds.</p>' }); </script>

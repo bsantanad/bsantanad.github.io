@@ -1,0 +1,185 @@
+<!DOCTYPE html><html lang="en" mode="dark" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="theme" content="Chirpy v2.7.1"><meta name="generator" content="Jekyll v4.1.1" /><meta property="og:title" content="Files in C" /><meta name="author" content="Benjamin Santana" /><meta property="og:locale" content="en_US" /><meta name="description" content="Into the Files" /><meta property="og:description" content="Into the Files" /><link rel="canonical" href="/posts/Files/" /><meta property="og:url" content="/posts/Files/" /><meta property="og:site_name" content="bsantanad" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2020-05-19T09:57:00-05:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="Files in C" /><meta name="twitter:site" content="@twitter_username" /><meta name="twitter:creator" content="@Benjamin Santana" /><meta name="google-site-verification" content="google_meta_tag_verification" /> <script type="application/ld+json"> {"description":"Into the Files","url":"/posts/Files/","headline":"Files in C","dateModified":"2020-12-25T14:28:24-06:00","@type":"BlogPosting","datePublished":"2020-05-19T09:57:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/Files/"},"author":{"@type":"Person","name":"Benjamin Santana"},"@context":"https://schema.org"}</script><title>Files in C | bsantanad</title><link rel="shortcut icon" href="/assets/img/favicons/favicon.ico" type="image/x-icon"><link rel="icon" href="/assets/img/favicons/favicon.ico" type="image/x-icon"><link rel="apple-touch-icon" href="/assets/img/favicons/apple-icon.png"><link rel="apple-touch-icon" href="/assets/img/favicons/apple-icon-precomposed.png"><link rel="apple-touch-icon" sizes="57x57" href="/assets/img/favicons/apple-icon-57x57.png"><link rel="apple-touch-icon" sizes="60x60" href="/assets/img/favicons/apple-icon-60x60.png"><link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicons/apple-icon-72x72.png"><link rel="apple-touch-icon" sizes="76x76" href="/assets/img/favicons/apple-icon-76x76.png"><link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicons/apple-icon-114x114.png"><link rel="apple-touch-icon" sizes="120x120" href="/assets/img/favicons/apple-icon-120x120.png"><link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicons/apple-icon-144x144.png"><link rel="apple-touch-icon" sizes="152x152" href="/assets/img/favicons/apple-icon-152x152.png"><link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-icon-180x180.png"><link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicons/android-icon-192x192.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicons/favicon-96x96.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/assets/img/favicons/manifest.json"><meta name='msapplication-config' content='/assets/img/favicons/browserconfig.xml'><meta name="msapplication-TileColor" content="#ffffff"><meta name="msapplication-TileImage" content="/assets/img/favicons/ms-icon-144x144.png"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://fonts.gstatic.com"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin="use-credentials"><link rel="dns-prefetch" href="https://www.google-analytics.com"><link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="preconnect" href="cdn.jsdelivr.net"><link rel="dns-prefetch" href="cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha256-LA89z+k9fjgMKQ/kq4OO2Mrf8VltYml/VES+Rg0fh20=" crossorigin="anonymous"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous"><link rel="preload" href="/assets/css/post.css" as="style"><link rel="stylesheet" href="/assets/css/post.css"><link rel="preload" as="style" href="/assets/css/lib/bootstrap-toc.min.css"><link rel="stylesheet" href="/assets/css/lib/bootstrap-toc.min.css" /> <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script> <script defer src="https://cdn.jsdelivr.net/combine/npm/popper.js@1.15.0,npm/bootstrap@4/dist/js/bootstrap.min.js"></script> <script async src="/assets/js/post.min.js"></script> <script defer src="/app.js"></script> <script defer src="https://www.googletagmanager.com/gtag/js?id="></script> <script> document.addEventListener("DOMContentLoaded", function(event) { window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', ''); }); </script><body data-spy="scroll" data-target="#toc"><div id="sidebar" class="d-flex flex-column align-items-end"><div class="profile-wrapper text-center"><div id="avatar"> <a href="/" alt="avatar" class="mx-auto"> <img src="/assets/img/sample/avatar.jpg" alt="avatar" onerror="this.style.display='none'"> </a></div><div class="site-title mt-3"> <a href="/">bsantanad</a></div><div class="site-subtitle font-italic">benja santana's blog.</div></div><ul class="w-100"><li class="nav-item"> <a href="/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>HOME</span> </a><li class="nav-item"> <a href="/tabs/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>CATEGORIES</span> </a><li class="nav-item"> <a href="/tabs/tags/" class="nav-link"> <i class="fa-fw fas fa-tags ml-xl-3 mr-xl-3 unloaded"></i> <span>TAGS</span> </a><li class="nav-item"> <a href="/tabs/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>ARCHIVES</span> </a><li class="nav-item"> <a href="/tabs/about/" class="nav-link"> <i class="fa-fw fas fa-info ml-xl-3 mr-xl-3 unloaded"></i> <span>ABOUT</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center"> <a href="https://github.com/bsantanad" aria-label="github" target="_blank" rel="noopener"> <i class="fab fa-github-alt"></i> </a> <a href=" javascript:location.href = 'mailto:' + ['0211518','up.edu.mx'].join('@')" aria-label="email" > <i class="fas fa-envelope"></i> </a> <a href="" aria-label="linkedin" target="_blank" rel="noopener"> <i class="fab fa-linkedin"></i> </a></div></div><div id="topbar-wrapper" class="row justify-content-center topbar-down"><div id="topbar" class="col-11 d-flex h-100 align-items-center justify-content-between"> <span id="breadcrumb"> <span> <a href="/"> Posts </a> </span> <span>Files in C</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> Post</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" placeholder="Search..."> <i class="fa fa-times-circle fa-fw" id="search-cleaner"></i> </span> <span id="search-cancel" >Cancel</span></div></div><div id="main-wrapper"><div id="main"><div class="row"><div id="post-wrapper" class="col-12 col-lg-11 col-xl-8"><div class="post pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><h1 data-toc-skip>Files in C</h1><div class="post-meta text-muted d-flex flex-column"><div> <span class="timeago " data-toggle="tooltip" data-placement="bottom" title="Tue, May 19, 2020, 9:57 AM -0500" > May 19, 2020 <i class="unloaded">2020-05-19T09:57:00-05:00</i> </span> by <span class="author"> Benjamin Santana </span></div><div> <span> Updated <span class="timeago lastmod" data-toggle="tooltip" data-placement="bottom" title="Fri, Dec 25, 2020, 2:28 PM -0600" > Dec 25, 2020 <i class="unloaded">2020-12-25T14:28:24-06:00</i> </span> </span> <span class="readtime" data-toggle="tooltip" data-placement="bottom" title="705 words">3 min</span></div></div><div class="post-content"><h2 id="into-the-files">Into the Files</h2><p>So in this post we are going to talk about the basic stuff you can do with a file, open, writing, reading you name it. This is the 5th post in a series of post, in the <a href="https://benjasantana.github.io/2020/05/18/Arrays-Strings.html">last one</a> we learned all about arrays and strings, go check it out!</p><p>We are taking most of this course information from <a href="https://www.cprogramming.com/tutorial/c/lesson1.html">here</a>. So if you want better information, go there!</p><h2 id="files">FILES</h2><p>Many times we want to open a file and write some information on it, so when we exit the program and run it again we don’t start from scratch, the guy who created C makes this really easy for us. Here’s an example, and then will break it down.</p><div class="language-c highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+</pre><td class="rouge-code"><pre><span class="cp">#include &lt;stdio.h&gt;
+</span><span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+
+    <span class="kt">FILE</span> <span class="o">*</span><span class="n">filePointer</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">word1</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">word2</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">word3</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">c</span><span class="p">;</span>
+
+    <span class="n">filePointer</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">"test.in"</span><span class="p">,</span> <span class="s">"w+"</span><span class="p">);</span>
+
+    <span class="n">fprintf</span><span class="p">(</span><span class="n">filePointer</span><span class="p">,</span> <span class="s">"I love C!"</span><span class="p">);</span> <span class="c1">//Writes in file</span>
+    
+    <span class="n">fputc</span><span class="p">(</span><span class="mi">33</span><span class="p">,</span> <span class="n">filePointer</span><span class="p">);</span> <span class="c1">//Add '!' Character to the file</span>
+
+    <span class="c1">// Moves the position indicator of the file is set to the beginning</span>
+    <span class="n">rewind</span><span class="p">(</span><span class="n">filePointer</span><span class="p">);</span> 
+
+
+    <span class="c1">//Reads From File</span>
+    <span class="n">fscanf</span><span class="p">(</span><span class="n">filePointer</span><span class="p">,</span> <span class="s">"%s %s %s"</span><span class="p">,</span> <span class="n">word1</span><span class="p">,</span> <span class="n">word2</span><span class="p">,</span> <span class="n">word3</span><span class="p">);</span> 
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%s %s %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">word3</span><span class="p">,</span> <span class="n">word2</span><span class="p">,</span> <span class="n">word1</span><span class="p">);</span>
+
+    <span class="n">rewind</span><span class="p">(</span><span class="n">filePointer</span><span class="p">);</span>
+
+    <span class="c1">//Read Char by Char</span>
+    <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">fgetc</span><span class="p">(</span><span class="n">filePointer</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">c</span> <span class="o">!=</span> <span class="n">EOF</span><span class="p">){</span>
+
+            <span class="n">printf</span><span class="p">(</span><span class="s">"%c"</span><span class="p">,</span> <span class="n">c</span><span class="p">);</span>
+
+        <span class="p">}</span> <span class="k">else</span><span class="p">{</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+
+    <span class="n">fclose</span><span class="p">(</span><span class="n">filePointer</span><span class="p">);</span> <span class="c1">//Closes File</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>Output:</p><div class="language-bash highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre>
+C!! love I
+I love C!!
+
+</pre></table></code></div></div><p>Okay, a big chunk of code I know, but pay attention, there’s almost everything you’ll ever want to do with a file ever.</p><ul><li>How to open the text file<li>How to write a String<li>How to write a char<li>How to read line by line with fscanf (The same as in the example just use a <em>while fscanf() != EOF</em>)<li>How to read char by char<li>How to close it.</ul><p>So that piece of code it’s you little cheat sheet, so you can do everything you want with text files.</p><p>Here’s a list of the modes fopen allows.</p><div class="table-wrapper"><table><thead><tr><th>Open Mode<th style="text-align: center">What does it Do<tbody><tr><td>r<td style="text-align: center">Read<tr><td>w<td style="text-align: center">Write (File shouldn’t exists)<tr><td>a<td style="text-align: center">Append<tr><td>r+<td style="text-align: center">Reads and Writes<tr><td>w+<td style="text-align: center">Reads and Writes (Overwriting)<tr><td>a+<td style="text-align: center">Reads and Writes (Appends if exists)</table></div><h2 id="binary">Binary</h2><p>Just here for the code?</p><div class="language-c highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+</pre><td class="rouge-code"><pre><span class="cp">#include&lt;stdio.h&gt;
+</span>
+<span class="k">struct</span> <span class="n">Dog</span><span class="p">{</span>
+
+    <span class="kt">char</span> <span class="n">name</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">age</span><span class="p">;</span>
+
+<span class="p">};</span>
+
+
+<span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span> <span class="p">{</span>
+
+    <span class="kt">FILE</span> <span class="o">*</span><span class="n">fileWriter</span><span class="p">;</span>
+    <span class="kt">FILE</span> <span class="o">*</span><span class="n">fileReader</span><span class="p">;</span>
+
+    <span class="k">struct</span> <span class="n">Dog</span> <span class="n">dogs</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="p">{</span><span class="s">"Shaggy"</span><span class="p">,</span><span class="mi">8</span><span class="p">},</span>
+                <span class="p">{</span><span class="s">"Doggy"</span><span class="p">,</span><span class="mi">6</span><span class="p">},</span>
+                <span class="p">{</span><span class="s">"Timmy"</span><span class="p">,</span><span class="mi">4</span><span class="p">}</span>
+    <span class="p">};</span>
+
+    <span class="k">struct</span> <span class="n">Dog</span> <span class="n">readDogs</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span>
+
+    <span class="n">fileWriter</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span> <span class="s">"binary.in"</span> <span class="p">,</span> <span class="s">"w"</span> <span class="p">);</span> 
+    
+    <span class="c1">// Stores all the array of dogs</span>
+    <span class="n">fwrite</span><span class="p">(</span><span class="n">dogs</span> <span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">dogs</span><span class="p">)</span> <span class="p">,</span> <span class="mi">1</span> <span class="p">,</span> <span class="n">fileWriter</span> <span class="p">);</span> 
+    
+    <span class="c1">//Stores just two dogs</span>
+    <span class="n">fwrite</span><span class="p">(</span><span class="n">dogs</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span> <span class="n">Dog</span><span class="p">),</span> <span class="mi">2</span><span class="p">,</span> <span class="n">fileWriter</span><span class="p">);</span> 
+
+    <span class="n">fclose</span><span class="p">(</span><span class="n">fileWriter</span><span class="p">);</span>
+
+    <span class="n">fileReader</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">"binary.in"</span><span class="p">,</span> <span class="s">"r"</span><span class="p">);</span>
+    
+    <span class="c1">// Reads two of the dogs stored in the file.</span>
+    <span class="n">fread</span><span class="p">(</span><span class="n">readDogs</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span> <span class="n">Dog</span><span class="p">),</span> <span class="mi">2</span><span class="p">,</span> <span class="n">fileReader</span><span class="p">);</span> 
+    
+    <span class="n">fclose</span><span class="p">(</span><span class="n">fileReader</span><span class="p">);</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%s"</span><span class="p">,</span> <span class="n">readDogs</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">name</span><span class="p">);</span>
+
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>Output:</p><div class="language-bash highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre>
+Doggy
+
+</pre></table></code></div></div><p>Okay, look this looks a little more complicated, but don’t worry it’s just as easy.</p><p>When we want to store things into a binary file we use <strong>fwrite()</strong> and when we want to read a binary file we use <strong>fread()</strong></p><ul><li><p><strong>fwrite(ptr,size,howmany, file)</strong></p><li>ptr = The direction of where you want to get the thing you’ll write<li>size = the size of the struct you want to store<li>howmany = How many of the size you said before you want to store<li><p>file = Pointer to file where you want to store them</p><li><p><strong>freads(ptr, size, howmany, file)</strong></p><li>ptr = Direction of where you want to store the read data.<li>size = Size of what you want to read<li>howmany, same as before in fwrite<li>file = The file you want to read from</ul><h2 id="have-fun">Have Fun</h2><p>Well, that was a little longer that I expected, I hope you can come back to this post when you want to open a file in the future. Cheers!</p><ul><li>Past post: <a href="https://benjasantana.github.io/2020/05/18/Arrays-Strings.html">Arrays and Strings</a><li>Next Post: <a href="https://benjasantana.github.io/2020/05/20/Typecasting.html">Typecasting</a></ul><p>Happy Coding, benjaSantana</p></div><div class="post-tail-wrapper text-muted"><div class="post-meta mb-3"> <i class="far fa-folder-open fa-fw mr-1"></i> <a href='/categories/c/'>C</a>, <a href='/categories/files/'>files</a></div><div class="post-tags"> <i class="fa fa-tags fa-fw mr-1"></i> <a href="/tags/c/" class="post-tag no-text-decoration" >c</a> <a href="/tags/syntax/" class="post-tag no-text-decoration" >syntax</a> <a href="/tags/files/" class="post-tag no-text-decoration" >files</a></div><div class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2"><div class="license-wrapper"> This post is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> by the author.</div><div class="share-wrapper"> <span class="share-label text-muted mr-1">Share</span> <span class="share-icons"> <a href="https://twitter.com/intent/tweet?text=Files in C - bsantanad&url=/posts/Files/" data-toggle="tooltip" data-placement="top" title="Twitter" target="_blank" rel="noopener" aria-label="Twitter"> <i class="fa-fw fab fa-twitter"></i> </a> <a href="https://www.facebook.com/sharer/sharer.php?title=Files in C - bsantanad&u=/posts/Files/" data-toggle="tooltip" data-placement="top" title="Facebook" target="_blank" rel="noopener" aria-label="Facebook"> <i class="fa-fw fab fa-facebook-square"></i> </a> <a href="https://telegram.me/share?text=Files in C - bsantanad&url=/posts/Files/" data-toggle="tooltip" data-placement="top" title="Telegram" target="_blank" rel="noopener" aria-label="Telegram"> <i class="fa-fw fab fa-telegram"></i> </a> <i class="fa-fw fas fa-link small" onclick="copyLink()" data-toggle="tooltip" data-placement="top" title="Copy link"></i> </span></div></div></div></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted topbar-down"><div class="access"><div id="access-lastmod" class="post"> <span>Recent Update</span><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li><a href="/posts/arrays-done-right/">C Done Right; Arrays</a><li><a href="/posts/unix-logbook-1/">FreeBSD-Unix Logbook 1, Setting things up with Raspberry Pi</a><li><a href="/posts/unix-logbook-2/">FreeBSD-Unix Logbook 2, Users and Account Management</a><li><a href="/posts/unix-logbook-3/">FreeBSD-Unix Logbook 3, Permissions</a><li><a href="/posts/unixlogbook-4/">FreeBSD-Unix Logbook 4, Directory Structure</a></ul></div><div id="access-tags"> <span>Trending Tags</span><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/bsd/">bsd</a> <a class="post-tag" href="/tags/unix/">unix</a> <a class="post-tag" href="/tags/c/">c</a> <a class="post-tag" href="/tags/syntax/">syntax</a> <a class="post-tag" href="/tags/array/">array</a> <a class="post-tag" href="/tags/basics/">basics</a> <a class="post-tag" href="/tags/jekyll/">jekyll</a> <a class="post-tag" href="/tags/python/">python</a> <a class="post-tag" href="/tags/account/">account</a> <a class="post-tag" href="/tags/app/">app</a></div></div></div><div id="toc-wrapper" class="pl-0 pr-4 mb-5"> <span class="pl-3 pt-2 mb-2">Contents</span><nav id="toc" data-toggle="toc"></nav></div></div></div><div class="row"><div class="col-12 col-lg-11 col-xl-8"><div id="post-extend-wrapper" class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><div id="related-posts" class="mt-5 mb-2 mb-sm-4"><h3 class="pt-2 mt-1 mb-4 ml-1" data-toc-skip>Further Reading</h3><div class="card-deck mb-4"><div class="card"> <a href="/posts/arrays-done-right/"><div class="card-body"> <span class="timeago small" > Sep 30, 2020 <i class="unloaded">2020-09-30T13:41:00-05:00</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>C Done Right; Arrays</h3><div class="text-muted small"><p> Personal Stuff Hi, my last post was almost 4 months ago, so I’ll do a quick update of my life – if you are here just for the pointers info scroll down – Well, I’ve been working remotely at Intel a...</p></div></div></a></div><div class="card"> <a href="/posts/ReLearning-C/"><div class="card-body"> <span class="timeago small" > May 17, 2020 <i class="unloaded">2020-05-17T15:00:00-05:00</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>Basics in C (Refresher).</h3><div class="text-muted small"><p> It’s been a while Hi! So I’ve not written a lot in the blog since 2 months ago. Some things changed in my life. I got an Internship in Intel! Last Wednesday I received the offer. Also, we have bee...</p></div></div></a></div><div class="card"> <a href="/posts/Pointers-Structures-C/"><div class="card-body"> <span class="timeago small" > May 18, 2020 <i class="unloaded">2020-05-18T11:20:00-05:00</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>Pointer Basics and Structures in C.</h3><div class="text-muted small"><p> Heavier Things So yesterday we took a look at the basic C stuff: loops, functions, stdio and more! If you want to check that out click here, once you have that covered this is the next step. Good ...</p></div></div></a></div></div></div><div class="post-navigation d-flex justify-content-between"> <a href="/posts/Arrays-Strings/" class="btn btn-outline-primary"><p>Arrays and Strings in C.</p></a> <a href="/posts/Typecasting/" class="btn btn-outline-primary"><p>Typecasting in C</p></a></div><div id="disqus" class="pt-2 pb-2"><p class="font-italic text-center text-muted small"> Comments powered by <a href="https://disqus.com/">Disqus</a>.</p></div><script src="/assets/js/lib/jquery.disqusloader.min.js"></script> <script> var options = { scriptUrl: '//bsantanad-github-io.disqus.com/embed.js', disqusConfig: function() { this.page.url = '/posts/Files/'; this.page.identifier = '/posts/Files/'; } }; $.disqusLoader('#disqus', options); </script></div></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script> <script type="text/javascript"> const imgs = document.querySelectorAll('#post-wrapper img'); const observer = lozad(imgs); observer.observe(); </script><footer class="d-flex w-100 justify-content-center"><div class="d-flex justify-content-between align-items-center"><div class="footer-left"><p class="mb-0"> © 2021 <a href="https://github.com/bsantanad">Benjamin Santana</a>. <span data-toggle="tooltip" data-placement="top" title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.">Some rights reserved.</span></p></div><a href="https://freebsdfoundation.org/donate" target="_blank"> <img src="https://freebsdfoundation.org/wp-content/uploads/2015/12/proud_donor.gif" alt="Proud Donor" title="FreeBSD Foundation Donor" width="70" height="70" ></a><div class="footer-right"><p class="mb-0"> Proudly powered by <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> with <a href="https://github.com/cotes2020/jekyll-theme-chirpy/" target="_blank" rel="noopener">Chirpy</a> theme.</p></div></div></footer></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-xl-11 post-content"><div id="search-hints"><h4 class="text-muted mb-4">Trending Tags</h4><a class="post-tag" href="/tags/bsd/">bsd</a> <a class="post-tag" href="/tags/unix/">unix</a> <a class="post-tag" href="/tags/c/">c</a> <a class="post-tag" href="/tags/syntax/">syntax</a> <a class="post-tag" href="/tags/array/">array</a> <a class="post-tag" href="/tags/basics/">basics</a> <a class="post-tag" href="/tags/jekyll/">jekyll</a> <a class="post-tag" href="/tags/python/">python</a> <a class="post-tag" href="/tags/account/">account</a> <a class="post-tag" href="/tags/app/">app</a></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a> <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.7.3/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"><div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>{categories}</div><div><i class="fa fa-tag fa-fw"></i>{tags}</div></div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5">Oops! No result founds.</p>' }); </script>
